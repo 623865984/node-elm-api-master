@@ -1,0 +1,50 @@
+{
+  "name": "node-elm-api",
+  "version": "1.0.0",
+  "description": "为nuxt-elm提供接口服务",
+  "main": "index.js",
+  "author": "[easytuan] <[easytuan@foxmail.com]>",
+  "license": "GPL",
+  "private": true,
+  "apidoc": {
+    "title": "elm-api接口文档",
+    "url": "https://elm-api.caibowen.net"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "mongod": "mongod --dbpath ~/mongodb/data",
+    "mongo": "node node_modules/admin-mongo/app",
+    "doc": "apidoc -i routes/ -o doc/",
+    "start": "cross-env NODE_ENV=production pm2 start index.js --node-args='--harmony' --name 'node-elm-api'",
+    "stop": "cross-env NODE_ENV=production pm2 stop index.js --name 'node-elm-api'",
+    "restart": "cross-env NODE_ENV=production pm2 restart index.js --node-args='--harmony' --name 'node-elm-api'",
+    "delete": "pm2 delete node-elm-api"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EasyTuan/node-elm-api"
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "body-parser": "^1.18.3",
+    "chalk": "^2.4.1",
+    "config-lite": "^1.6.0",
+    "cookie-parser": "^1.4.3",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.3",
+    "gm": "^1.23.1",
+    "mongoose": "^4.13.15",
+    "pm2": "^2.10.4",
+    "request": "^2.88.0",
+    "time-formater": "^1.1.2",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "admin-mongo": "^0.0.23",
+    "apidoc": "^0.17.6",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "nodemon": "^1.18.3"
+  }
+}
